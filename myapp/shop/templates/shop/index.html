@@ -1,0 +1,19 @@
+
+{% extends 'shop/base.html'%}
+{% block title %} Home|page {% endblock title %}
+
+{%block body%}
+{% load static %}
+<h2> this is the data : </h2>-->
+<h2> products: -  </h2>
+{{products}}
+{% for i in products %}
+<h2> {{i}}, {{i.desc}} </h2>
+print(i.product_name)
+{% endfor %}
+<img src="{% static 'shop/images/anjali.jpg' %}" alt="My image" height="300px" width="700px"/>
+
+<a href = "/shop/static/file.txt">click here</a>
+
+{% endblock body%}
+

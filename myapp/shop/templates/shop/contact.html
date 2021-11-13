@@ -1,0 +1,18 @@
+{% extends 'shop/base.html'%}
+{% block title %} Contact Us {% endblock title %}
+{%block body%}
+<h1> this is contact us page</h1>
+<form action="/shop/contact" method="post">
+    {% csrf_token %}
+<!-- {{st}} -->
+    <label for="name">Enter your name.</label>
+    <input type="text" name = 'name' id = 'name' placeholder="Enter your name.">
+    <label for="textarea">Enter the description</label>
+    <textarea name="textarea" id = "textarea"></textarea>
+    <input type="submit"  value="Submit">
+</form>
+
+<h2> This is what you have entered.</h2>
+{{details}}
+
+{% endblock body%}
