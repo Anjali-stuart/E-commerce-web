@@ -1,8 +1,20 @@
-from django.shortcuts import render ,HttpResponse
-
+from django.shortcuts import render ,HttpResponse, redirect
+from .form import EmpForm,StudentForm,StuForm
 # Create your views here.
 def index(request):
-    return render(request,'blog/index.html')
+    # Emp = EmpForm()
+    # Stu = StuForm()
+    # form  = StudentForm()
+    if request.method=="POST":
+        form = EmpForm(request.POST)
+        if form.is_valid():
+            try:
+                return  redirect(' /')
+            except:
+                pass
+        else:
+            form = EmpForm()
+        return render(request,'blog/index.html', {'form':form})
 
 def about(request):
     return HttpResponse("this is about us")

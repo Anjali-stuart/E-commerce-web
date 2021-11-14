@@ -13,7 +13,7 @@ print(i.product_name)
 {% endfor %}
 <img src="{% static 'shop/images/anjali.jpg' %}" alt="My image" height="300px" width="700px"/>
 
-<a href = "/shop/static/file.txt">click here</a>
+<a href = "{% static 'shop/file.txt' %}">click here</a>
 
 {% endblock body%}
 
